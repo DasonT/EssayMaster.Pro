@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.evidenceScout {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    width: 650px;
+    padding: 0px 70px;
+    margin: auto;
+}
+
+span {
+    font-family: 'Roboto', sans-serif;
+  
+}
+
+.loaderContainer {
+  width: 200px;
+  height: 500px;
+  /*display: flex;*/
+  margin: auto;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.titleContainer {
+  padding: 20px 0px;
+  font-weight: 900;
+}
+
+.titleText {
+  font-family: 'Roboto', sans-serif;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+input[type="text"] {
+    width: 600px;
+    height: 30px;
+    padding: 0px 10px;
+    font-size: 16px;
+    border-radius: 12.5px;
+    border-style: solid;
+    border-color: rgb(184, 184, 184);
+    color: rgb(0, 0, 0);
+    border-width: 1px;
+    outline: none;
+    transition: 0.3s;   
+}
+
+input[type="text"]:focus {
+    border-color: rgb(0, 0, 0);
+    transition: 0.3s;   
+}
+
+.greyText {
+  color: grey;
+}
+
+.redText {
+  color: red;
+}
+
+.smallText {
+  font-size: 13px;
+}
+
+br {
+    content: "";
+    margin: 2em;
+    display: block;
+    font-size: 5px;
+  }
+
+
+  /*-----
+  Essay Writer
+  -----*/
+
+
+  .paddingContainer {
+    padding: 20px 0px;
+  }
+
+  select {
+    font-family: 'Roboto', sans-serif;
+    padding: 5px 10px;
+    border-radius: 10px;
+    outline: none;
+  }
+
+  .generateButtonContainer {
+    text-align: center;
+  }
+
+  .generateButton {
+    margin: auto;
+    background: linear-gradient(rgba(95, 35, 119, 0.7), rgb(58, 0, 87));
+    background-color: #ffffff;
+    color: white;
+    outline: none;
+    border-radius: 10px;
+    border-style: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .generateButton:hover {
+    background-color: #77c577;
+    color: grey;
+    transition: 0.3s;
+  }
+
+  #evidenceSrcContainer {
+    display: none;
+  }
+
+  /*Range Input*/
+  /***** Chrome, Safari, Opera, and Edge Chromium *****/
+  input[type="range"]::-webkit-slider-runnable-track {
+    background: #43055f;
+    border-radius: 20px;
+  }
+
+  /******** Firefox ********/
+  input[type="range"]::-moz-range-track {
+    background: #43055f;
+    border-radius: 20px;
+  }
+
+/*-----
+Loader
+-----*/
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid rgb(0, 0, 0);
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  margin: 20px;
+  
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-bottom: 4px solid #44006c;
+  border-left: 4px solid transparent;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+
+.loadingAnim {
+  margin: auto;
+  width: 90%;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  font-weight: 500;
+}
+
+
+.loadingText {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  color: #000000;
+}
+
+
+.loadingText::before {
+    content: attr(data-text);
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    color: #c164ff;
+    animation: fill-1 3s infinite;
+  }
+
+@keyframes fill-1 {
+  50%   { width: 100%; }
+  100%  { width: 0%;   }
+}
+
+/*-----
+Results Container
+-----*/
+.resultsShower {
+  display: block;
+}
+
+.resultsContainer{
+  padding: 20px 0px;
+  padding-bottom: 50px;
+  width: 50%;
+  display: flex;
+  margin: auto;
+}
+
+.generatedText {
+  background: white;
+  font-family: 'Roboto', sans-serif;
+  margin: auto;
+  padding: 35px;
+  margin: 0 50px;
+  width: 50%;
+  border-radius: 20px;
+  -webkit-box-shadow: 10px 10px 46px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 46px -1px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 46px -1px rgba(0,0,0,0.75);
+}
+
+.evContainer {
+    width: 90%;
+    padding: 40px 5%;
+    height: fit-content;
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 10px 46px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 46px -1px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 46px -1px rgba(0,0,0,0.75);
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.evSource {
+    text-align: right;
+    color: grey;
+}
+
+.generatedEssay {
+  padding: 10px 0px;
+}
+
+.functionButtons {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  width: 200px;
+  height: 60px;
+  border-radius: 20px;
+  display: flex;
+  vertical-align: middle;
+  align-items: left;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 15px 0px;
+}
+
+.functionButtons:hover {
+  filter: brightness(50%);
+  transition: 0.3s;
+}
+
+.functionButtons img {
+  margin: auto;
+  height: 40px;
+  width: 40px;
+  flex: left;
+}
+
+.functionButtons p {
+  margin: auto;
+  height: 100%;
+  width: 120px;
+  vertical-align: middle;
+  align-items: center;
+  display: flex;
+}
+
+.blueBackground {
+  background: rgb(72, 72, 255);
+}
+
+.darkblueBackground {
+  background: rgb(34, 34, 126);
+}
+
+.orangeBackground {
+  background: rgb(255, 124, 72);
+}
+
+@media only screen and (max-width: 950px) {
+
+  .essayWriter {
+    width: 90%;
+    padding: 5%;
+  }
+
+  input[type="text"] {
+    width: 80%;
+  }
+
+
+  .resultsContainer {
+    display: block;
+    width: 100%;
+  }
+
+  .generatedText {
+    width: 80%;
+    margin: 0 5%;
+    padding: 5%;
+  }
+
+  .functionsContainer {
+    width: 100%;
+    margin-top: 40px;
+  }
+  .functionButtons {
+    margin: 20px auto;
+  }
+
+
+} 

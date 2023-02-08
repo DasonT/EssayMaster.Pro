@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    
+}
+
+@font-face {
+  font-family: "satoshi";
+  src: url("../fonts/Satoshi-Regular.otf");
+  }
+
+  @font-face {
+    font-family: "satoshi-medium";
+    src: url("../fonts/Satoshi-Medium.otf");
+    }
+  
+@font-face {
+  font-family: "satoshi-light";
+  src: url("../fonts/Satoshi-Light.otf");
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  overflow-x: hidden;
+}
+
+/*-----
+Header
+-----*/
+
+.header {
+    width: 100%;
+    height: 100px !important; 
+    display: block;
+    padding: 5px 0px;
+}
+
+.innerheader {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    display: block;
+
+}
+
+.logoContainer {
+    width: 300px;
+    height: 100%;
+    float: left;
+    margin: auto;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.logoContainer img {
+    height: 60px;
+    margin: auto;
+}
+
+.navigation {
+    display: block;
+    float: right;
+    height: 100px;
+ }
+ 
+ .navigation a {
+    height: 100%;
+    float: left;
+    display: table;
+    padding: 0px 20px;
+ }
+ 
+ .navigation a li{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100px;
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900px;
+    font-size: 15px;
+ }
+ 
+ .navigation a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: block;
+    position: relative;
+  }
+
+  .navigationUnderline:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 30px;
+    content: "";
+    display: block;
+    height: 2.2px;
+    left: 50%;
+    position: absolute;
+    background: rgb(255, 255, 255);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+
+  .navigationUnderline:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+
+  .signUpButton {
+    outline-style: solid;
+    outline-color:rgb(68, 0, 108);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(68, 0, 108);
+    color: white;
+    transition: 0.2s;
+  }
+
+  .signUpButton:hover {
+    background-color: white;
+    color: rgb(68, 0, 108);
+    transition: 0.2s;
+  }
+
+  #mobilenav {
+    display: none;
+  }
+
+  .burgermenuContainer {
+    display: none;
+  }
+  
+  /*Responsive*/
+
+  @media only screen and (max-width: 950px) {
+
+    /*Navigation*/
+
+    #mobilenav {
+      display: none;
+      width: 100%;
+      background-color: rgb(123, 80, 148);
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+    }
+
+    .mobilenav a {
+      color: white;
+      text-decoration: none;     
+      margin: 5px; 
+    }
+
+    .mobilenav hr {
+      color: white;
+      background-color: white;
+      height: 1px;
+    }
+
+    .mobilenav a li {
+      width: 200px;
+      margin: auto;
+      list-style: none;
+      padding: 5px; 
+
+    }
+
+    .navigation {
+      display: none
+    }
+
+  /*hamburger*/
+
+  .burgermenuContainer {
+    float: right;
+    height: 100%;
+    width: fit-content;
+    display:flex;
+    vertical-align: middle;
+    align-items: center;
+  }
+
+  label.hamburger {
+    display: flex;
+    width: 40px; /* less width = square hamburger */
+    height: 60px;
+    position: relative;
+    float:  right;
+    cursor: pointer;
+ }
+ 
+ input#hamburger {
+   display:none
+ }
+ 
+ .line {
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #000;
+    transition: 0.5s;
+ }
+ /* steps of 12 are optional, could also be 10, 13 etc */
+ .line:nth-child(1) { top: 12px; }
+ .line:nth-child(2) { top: 24px; }
+ .line:nth-child(3) { top: 36px; }
+ 
+ /* translateY must be same as */
+ #hamburger:checked + .hamburger .line:nth-child(1){
+    transform: translateY(12px) rotate(-45deg);
+ }
+ 
+ #hamburger:checked + .hamburger .line:nth-child(2){
+    opacity:0;
+ }
+ 
+ #hamburger:checked + .hamburger .line:nth-child(3){
+    transform: translateY(-12px) rotate(45deg);
+ }
+}
+
+footer {
+  font-family: "satoshi";
+  text-align: center;
+  color: grey;
+  width: 100%;
+  padding: 20px;
+  display: block;
+  position: relative;
+  bottom: 0;
+  height: 2.5rem;
+}

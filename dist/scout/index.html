@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI Essay Evidence Searcher - EssayMasterPro</title>
+    <link rel="shortcut icon" href="Assets/EssayMasterLogo.png">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="evidencescout.css">
+
+    <!--Scripts-->
+    <script src="https://kit.fontawesome.com/67eece109a.js" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2947518379869460"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+
+        <div class="innerheader">
+            <div class="logoContainer">
+            <a href="index.html" target="_blank">
+                <img src="Assets/PurpleGradientText_EMPLogo.png">
+            </a> 
+        </div>
+
+        <ul class="navigation">
+            <a href="/writer" class="navigationUnderline" target="_blank"><li>Write me an Esasy</li></a>
+            <a href="/enhancer" class="navigationUnderline" target="_blank"><li>Enhance my Essay</li></a>
+            <a href="/scout" target="_blank"><li><p class="signUpButton">Evidence Scout</p></li></a>
+            <!--<a href="#" class="navigationUnderline"><li>Log In</li></a>
+            <a href="#"><li><p class="signUpButton">Sign Up</p></li></a>-->
+        </ul>
+
+        
+        <div class="burgermenuContainer" onclick="burgerMenu()">
+            <div class="row">
+                <input type="checkbox" id="hamburger">
+                <label for="hamburger" class="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <ul class="mobilenav" id="mobilenav">
+        <a href="essaywriter.html"><li>Write me an Esasy</li></a>
+        <hr>
+        <a href="essayenhancer.html"><li>Enhance my Essay</li></a>
+        <hr>
+        <a href="#"><li>Log In</li></a>
+        <hr>
+        <a href="#"><li><p>Sign Up</p></li></a>
+    </ul>
+
+    <br>
+
+        <div class="titleContainer">
+            <h1 class="titleText">Find The Best Evidence For Your Essay&ensp;<i class="fa-brands fa-searchengin"></i></h1>
+        </div>
+
+        <div class="evidenceScout" id="evidenceScout">
+
+            <div class="essayTitleContainer paddingContainer">
+                <label for="text">Essay Title<label class="redText"> *</label></label>
+                <br>
+                <input type="text" name="" id="essayTitleInput" required>
+            </div>
+<!--
+            <div class="evidenceStanceContainer paddingContainer">
+                <span>Find Evidence&ensp;</span><select>
+                    <option value="supporting">For</option>
+                    <option value="against">Against</option>
+                    <option value="">Both For and Against</option>
+                </select><span>&ensp;the essay question</span><label class="redText"> *</label>
+            </div>
+            -->
+
+            <div class="generateButtonContainer paddingContainer">
+                <button class="generateButton" onclick="scoutEvidence()">Search &ensp;<i class="fa-brands fa-searchengin"></i></button>
+            </div>
+            
+        </div>
+
+
+        
+        <div class="loaderContainer" id="loaderContainer">
+
+            <div class="loadingAnim">
+                <span class="loader"></span>
+                <br>
+                <p id="loadingPercentage" class="loadingText" data-text="Loading...">Loading...</p>
+                <br>
+                <p id="loadingPercentage" class="greyText">Usually takes around 20 seconds</p>
+            </div>
+
+        </div>
+
+        <div class="resultsShower" id="resultsShower">
+        <div class="resultsContainer" id="resultsContainer">
+
+        <div class="evContainer">
+            <h1 class="evTitle">This should not be right</h1>
+            <br>
+            <p class="evQuote">Quote: "Lreaddsdd"</p>
+            <br>
+            <p class="evSource">Source: </p>
+            <br>
+            <p class="evExplain">Explanation: So this is dumb and dumb</p>
+        </div>
+
+        <br>
+
+        <div class="evContainer">
+            <h1 class="evTitle">This should not be right</h1>
+            <br>
+            <p class="evQuote">Quote: "Lreaddsdd"</p>
+            <br>
+            <p class="evSource">Source: </p>
+            <br>
+            <p class="evExplain">Explanation: So this is dumb and dumb</p>
+        </div>
+
+        <br>
+
+        <div class="evContainer">
+            <h1 class="evTitle">This should not be right</h1>
+            <br>
+            <p class="evQuote">Quote: "Lreaddsdd"</p>
+            <br>
+            <p class="evSource">Source: </p>
+            <br>
+            <p class="evExplain">Explanation: So this is dumb and dumb</p>
+        </div>
+
+            </div>
+        </div>
+    </div>
+
+        <script src="evidenceScout.js"></script>
+        <script src="hamburger.js"></script>
+
+</body>
+</html>
+    

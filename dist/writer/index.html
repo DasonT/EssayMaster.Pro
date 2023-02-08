@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI Essay Writer - EssayMasterPro</title>
+    <link rel="shortcut icon" href="../Assets/EssayMasterLogo.png">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="./essaywriter.css">
+
+    <!--Scripts-->
+    <script src="https://kit.fontawesome.com/67eece109a.js" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2947518379869460"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+
+        <div class="innerheader">
+            <div class="logoContainer">
+            <a href="/" target="_blank">
+                <img src="../Assets/WhiteText_EMPLogo.png">
+            </a> 
+        </div>
+
+        <ul class="navigation">
+            <a href="/writer" class="navigationUnderline" target="_blank"><li>Write me an Esasy</li></a>
+            <!--<a href="/enhancer" class="navigationUnderline" target="_blank"><li>Enhance my Essay</li></a>-->
+            <a href="/outliner" class="navigationUnderline" target="_blank"><li>Outline my Essay</li></a>
+            <!--<a href="/scout" target="_blank"><li><p class="signUpButton">Evidence Scout</p></li></a>
+            <a href="#" class="navigationUnderline"><li>Log In</li></a>
+            <a href="#"><li><p class="signUpButton">Sign Up</p></li></a>-->
+        </ul>
+
+        
+        <div class="burgermenuContainer" onclick="burgerMenu()">
+            <div class="row">
+                <input type="checkbox" id="hamburger">
+                <label for="hamburger" class="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <ul class="mobilenav" id="mobilenav">
+        <a href="/writer"><li>Write me an Esasy</li></a>
+        <hr>
+        <a href="/outliner"><li>Outline my Essay</li></a>
+    </ul>
+
+    <br>
+
+        <div class="titleContainer">
+            <h1 class="titleText">Generate Essays in Seconds.</h1>
+        </div>
+    
+
+        <div class="essayWriter" id="essayWriter">
+
+
+            <div class="essayTitleContainer paddingContainer">
+                <label for="text">Essay Title<label class="redText"> *</label></label>
+                <br>
+                <input type="text" name="" id="essayTitleInput" required>
+            </div>
+
+            <div class="essayTypeContainer paddingContainer">
+                <label for="text">Essay Type<label class="greyText"> (optional)</label></label>
+                <br>
+                <select name="essayTypeSelection" id="essayTypeSelection" class="select">
+                    <option value="">- Select -</option>
+                    <option value="narrative">Narrative essay</option>
+                    <option value="descriptive">Descriptive essay</option>
+                    <option value="expository">Expository essay</option>
+                    <option value="persuasive">Persuasive essay</option>
+                    <option value="argumentative">Argumentative essay</option>
+                    <option value="analytical">Analytical essay</option>
+                    <option value="definition">Definition essay</option>
+                    <option value="comparison and contrast">Comparison and contrast essay</option>
+                    <option value="process">Process essay</option>
+                    <option value="cause and effect">Cause and effect essay</option>
+                    <option value="critical">Critical essay</option>
+                </select>
+            </div>
+
+            <!--
+            <div class="sourceEvidenceContainer paddingContainer">
+                <label for="includeEvCheckbox">Include Evidence&ensp;</label>
+                <input type="checkbox" name="" id="includeEvCheckbox" class="checkbox" onclick="evCheckboxSelection()">
+                <div class="evidenceSrcContainer" id="evidenceSrcContainer">
+                    <br>
+                    <label class="greyText smallText">Evidence Source (optional)</label>
+                    <br>
+                    <input type="text" name="" id="evidenceSourceInput" placeholder="Separated with commas. e.g., 'Real life events, Bible'">
+                </div>
+            </div>
+-->
+            <div class="wordCountContainer paddingContainer">
+                <label for="wordCountRange">Word Count:&ensp;</label><label id="wordCountValue">500</label>
+                <br>
+                <input type="range" name="wordCountRange" id="wordCountRange" value="62.5" step="12.5" onchange="wordCountValue()">
+            </div>
+
+
+            <div class="generateButtonContainer paddingContainer">
+                <button class="generateButton" onclick="generateEssay();moveProgressBar();" >Generate</button>
+            </div>
+
+            <!--<label class="greyText">(optional)&ensp;</label>-->
+            
+        </div>
+
+        <div class="loaderContainer" id="loaderContainer">
+
+            <div class="loadingAnim">
+                <!--<span class="loader"></span>-->
+                <!-- Progress bar -->
+                <div class="progress-wrap progress" data-progress-percent="100">
+                    <div class="progress-bar progress"></div>
+                </div>
+                <br>
+                <p id="loadingPercentage" class="loadingText" data-text="Loading...">Loading...</p>
+                <br>
+                <p id="loadingPercentage" class="greyText" style="font-size:12px;">Usually takes around 20 seconds</p>
+            </div>
+
+        </div>
+
+        <div class="resultsShower" id="resultsShower">
+        <div class="resultsContainer" id="resultsContainer">
+            <div class="generatedText">
+                <h1 id="generatedEssayTitle">Title</h1>
+                <br>
+                <p id="generatedEssay" class="generatedEssay">Content</p>
+            </div>
+            <br>
+            <div class="functionsContainer">
+                <div class="functionButtons blueBackground" id="copyToClipboardButton" onclick="copyText()">
+                    <p id="copyToClipboardText"><i class="fa-solid fa-copy"></i>&ensp;&ensp;Copy text</p>
+                </div>
+                <a href="/enhancer" target="_blank">
+                    <div class="functionButtons orangeBackground" id="copyToClipboardButton">
+                        <p id="copyToClipboardText"><i class="fa-solid fa-wand-magic-sparkles"></i>&ensp;&ensp;Enhance essay</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="../scripts/progressbar.js"></script>
+        <script src="essaywriter.js"></script>
+        <script src="../scripts/hamburger.js"></script>
+
+</body>
+</html>

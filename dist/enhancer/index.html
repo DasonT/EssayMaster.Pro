@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI Essay Enhancer - EssayMasterPro</title>
+    <link rel="shortcut icon" href="../Assets/EssayMasterLogo.png">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="essayenhancer.css">
+    
+    <!--Scripts-->
+    <script src="https://kit.fontawesome.com/67eece109a.js" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2947518379869460"
+    crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="header">
+
+        <div class="innerheader">
+            <div class="logoContainer">
+                <a href="/" target="_blank">
+            <img src="../Assets/WhiteText_EMPLogo.png">
+            </a> 
+        </div>
+
+
+        <ul class="navigation">
+            <a href="/writer" class="navigationUnderline" target="_blank"><li>Write me an Esasy</li></a>
+            <a href="/enhancer" class="navigationUnderline" target="_blank"><li>Enhance my Essay</li></a>
+            <a href="/outliner" class="navigationUnderline" target="_blank"><li>Outline my Essay</li></a>
+            <!--<a href="/scout" target="_blank"><li><p class="signUpButton">Evidence Scout</p></li></a>
+            <a href="#" class="navigationUnderline"><li>Log In</li></a>
+            <a href="#"><li><p class="signUpButton">Sign Up</p></li></a>-->
+        </ul>
+    
+        
+        <div class="burgermenuContainer" onclick="burgerMenu()">
+            <div class="row">
+                <input type="checkbox" id="hamburger">
+                <label for="hamburger" class="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <ul class="mobilenav" id="mobilenav">
+        <a href="essaywriter.html"><li>Write me an Esasy</li></a>
+        <hr>
+        <a href="essayenhancer.html"><li>Enhance my Essay</li></a>
+        <hr>
+        <a href="#"><li>Log In</li></a>
+        <hr>
+        <a href="#"><li><p>Sign Up</p></li></a>
+    </ul>
+
+<br>
+        <div class="titleContainer">
+            <h1 class="titleText">Enhance your Essay with Advanced Words and Idioms.&ensp;<span class="betaIcon tooltip" data-text="I'm still in developing process!">BETA</span></h1>
+        </div>
+
+    <div class="essayEnhancer" id="essayEnhancer">
+
+        <div class="essayInputContainer">
+            <textarea name="" id="essayInput" placeholder="Type or paste your essay here..."></textarea>
+            <div class="container">
+                <div>
+                    <div><span id="charlimit"><strong class="words-left">0/500 words</strong></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="submitButtonContainer paddingContainer">
+            <button class="submitButton" onclick="enhanceEssay()">Submit</button>
+        </div>
+    </div>
+
+
+    <div class="loaderContainer" id="loaderContainer">
+
+        <div class="loadingAnim">
+            <span class="loader"></span>
+            <br>
+            <p id="loadingPercentage" class="loadingText" data-text="Loading...">Loading...</p>
+            <br>
+            <p id="loadingPercentage" class="greyText">Usually takes around 20 seconds</p>
+        </div>
+
+    </div>
+
+    <div class="resultsShow" id="resultsShow">
+    <div class="resultsContainer" id="resultsContainer">
+        <div class="enhancedText">
+            <p id="enhancedEssay" class="enhancedEssay"></p>
+        </div>
+        <div class="functionsContainer">
+            <div class="functionButtons blueBackground" id="copyToClipboardButton" onclick="copyText()">
+                <img id="copyToClipboardImg" src="../Assets/copytoclipboard.png">
+                <p id="copyToClipboardText">Copy text</p>
+            </div>
+
+            <a href="essaywriter.html" style="text-decoration:none">
+                <div class="functionButtons redBackground">
+                    <img id="copyToClipboardImg" src="../Assets/lightning.png">
+                    <p id="copyToClipboardText">Generate essay</p>
+                </div>
+            </a>
+ 
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="essayenhancer.js"></script>
+    <script src="wordsLimit.js"></script>
+    <script src="../scripts/hamburger.js"></script>
+
+</body>
+</html>

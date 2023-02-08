@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.titleText {
+    font-family: 'Roboto', sans-serif;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+.essayEnhancer {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    width: 90%;
+    margin: auto;
+}
+
+.betaIcon {
+    background-color: rgb(68, 68, 68);
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.loaderContainer {
+    width: 100%;
+    height: 500px;
+    /*display: flex;*/
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .highlighted {
+    background-color: yellow;
+  }
+
+/*-----
+Essay Enhancer
+-----*/
+
+.titleContainer {
+    padding: 20px 0px;
+    font-weight: 900;
+  }
+
+  .paddingContainer {
+    padding: 20px 0px;
+  }
+
+  textarea {
+    background-color: #202020;
+    font-family: 'Roboto', sans-serif;
+    width: 800px;
+    height: 400px;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 12.5px;
+    border-style: solid;
+    border-color: rgb(56, 56, 56);
+    color: rgb(255, 255, 255);
+    border-width: 1px;
+    outline: none;
+    transition: 0.3s;   
+}
+
+textarea:focus {
+    transition: 0.3s;   
+}
+
+.words-left {
+  display: block;
+  width: fit-content;
+  margin: 2px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.submitButton {
+  background-color: rgba(146, 65, 179, 0.7);
+    color: white;
+    outline: none;
+    border-radius: 10px;
+    border-style: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .submitButton:hover {
+    background-color: rgba(95, 42, 116, 0.7);
+    color: grey;
+    transition: 0.3s;
+  }
+
+  
+/*-----
+Loader
+-----*/
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid rgb(0, 0, 0);
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin: 20px;
+    
+  }
+  .loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border-bottom: 4px solid #44006c;
+    border-left: 4px solid transparent;
+  }
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+  
+  
+  .loadingAnim {
+    margin: auto;
+    width: 90%;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-weight: 500;
+  }
+  
+  
+  .loadingText {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    color: #000000;
+  }
+  
+  
+  .loadingText::before {
+      content: attr(data-text);
+      position: absolute;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      color: #c164ff;
+      animation: fill-1 3s infinite;
+    }
+  
+  @keyframes fill-1 {
+    50%   { width: 100%; }
+    100%  { width: 0%;   }
+  }
+
+  
+/*-----
+Results Container
+-----*/
+
+.resultsContainer{
+    padding: 20px 0px;
+    padding-bottom: 50px;
+    width: 100%;
+    display: flex;
+  }
+
+.resultsShow {
+  display: none;
+}
+  
+  .enhancedText {
+    background: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0px 50px;
+    padding: 35px;
+    width: 50%;
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 10px 46px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 46px -1px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 46px -1px rgba(0,0,0,0.75);
+  }
+  
+  .enhancedEssay {
+    padding: 10px 0px;
+  }
+  
+  .functionButtons {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    display: flex;
+    vertical-align: middle;
+    align-items: left;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 15px 0px;
+  }
+  
+  .functionButtons:hover {
+    filter: brightness(50%);
+    transition: 0.3s;
+  }
+  
+  .functionButtons img {
+    margin: auto;
+    height: 40px;
+    width: 40px;
+    flex: left;
+  }
+  
+  .functionButtons p {
+    margin: auto;
+    height: 100%;
+    width: 120px;
+    vertical-align: middle;
+    align-items: center;
+    display: flex;
+  }
+  
+  .blueBackground {
+    background: rgb(72, 72, 255);
+  }
+  
+  .darkblueBackground {
+    background: rgb(34, 34, 126);
+  }
+  
+  .redBackground {
+    background: rgb(186 0 0);
+  }
+
+  /*-----
+  Tooltip
+  -----*/
+
+  .tooltip {
+    position:relative; /* making the .tooltip span a container for the tooltip text */
+  }
+
+  .tooltip:before {
+    content: attr(data-text); /* here's the magic */
+    position:absolute;
+    font-weight: 200;
+    /* vertically center */
+    top:50%;
+    transform:translateY(-50%);
+    
+    /* move to right */
+    left:100%;
+    margin-left:15px; /* and add a small left margin */
+    
+    /* basic styles */
+    width:200px;
+    padding:10px;
+    border-radius:10px;
+    background:rgb(0, 0, 0);
+    color: #fff;
+    text-align:center;
+    opacity: 0.8;
+  
+    display:none; /* hide by default */
+  }
+
+  .tooltip:hover:before {
+    display:block;
+  }
+
+
+  @media only screen and (max-width: 950px) {
+    
+    body {
+      overflow-x: hidden;
+    }
+
+    .essayEnhancer {
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+      text-align: center;
+
+    }
+
+    textarea {
+      width: 80%;
+      margin: 0 5%;
+      padding: 5%;
+    }
+
+    .resultsContainer {
+      display: block;
+      width: 100%;
+    }
+
+    .enhancedText {
+      width: 80%;
+      margin: 0 5%;
+      padding: 5%;      
+    }
+
+    
+  .functionsContainer {
+    width: 100%;
+    margin-top: 40px;
+  }
+  .functionButtons {
+    margin: 20px auto;
+  }
+
+
+  }

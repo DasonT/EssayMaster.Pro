@@ -1,0 +1,561 @@
+@font-face {
+  font-family: "satoshi";
+  src: url("../fonts/Satoshi-Regular.otf");
+  }
+
+  @font-face {
+    font-family: "satoshi-medium";
+    src: url("../fonts/Satoshi-Medium.otf");
+    }
+  
+@font-face {
+  font-family: "satoshi-light";
+  src: url("../fonts/Satoshi-Light.otf");
+}
+
+
+button {
+  font-family: "satoshi", sans-serif;
+
+}
+
+.essayWriter {
+    display: block;
+    font-family: 'satoshi', sans-serif;
+    width: 650px;
+    padding: 0px 70px;
+    margin: auto;
+}
+
+.loaderContainer {
+  width: 200px;
+  height: 500px;
+  /*display: flex;*/
+  margin: auto;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.titleContainer {
+  padding: 20px 0px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.titleText {
+  font-family: 'satoshi-medium', sans-serif;
+  width: 90%;
+  margin: auto;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+input[type="text"] {
+  background-color: #151515;
+    width: 600px;
+    height: 30px;
+    padding: 0px 10px;
+    font-size: 16px;
+    border-radius: 12.5px;
+    border-style: solid;
+    border-color: rgb(62, 62, 62);
+    color: white;
+    border-width: 1px;
+    outline: none;
+    transition: 0.3s;    
+}
+
+input:-internal-autofill-selected {
+  background-color: #151515;
+    width: 600px;
+    height: 30px;
+    padding: 0px 10px;
+    font-size: 16px;
+    border-radius: 12.5px;
+    border-style: solid;
+    border-color: rgb(62, 62, 62);
+    color: white;
+    border-width: 1px;
+    outline: none;
+    transition: 0.3s;  
+}
+
+input[type="text"]:focus {
+  border-color: rgb(119, 119, 119);
+  transition: 0.3s;   
+}
+
+.greyText {
+  color: grey;
+}
+
+.redText {
+  color: red;
+}
+
+.smallText {
+  font-size: 13px;
+}
+
+br {
+    content: "";
+    margin: 2em;
+    display: block;
+    font-size: 5px;
+  }
+
+
+/*-----
+Checkbox
+-----*/
+
+input[type=checkbox] {
+    position: relative;
+      border: 1px solid rgb(75, 0, 166);
+      border-radius: 2px;
+      background: none;
+      cursor: pointer;
+      line-height: 0;
+      margin: 0 .6em 0 0;
+      outline: 0;
+      padding: 0 !important;
+      vertical-align: text-top;
+      height: 20px;
+      width: 20px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      opacity: 1;
+  }
+  
+  input[type=checkbox]:hover {
+    opacity: 1;
+  }
+  
+  input[type=checkbox]:checked {
+    background-color: rgb(75, 0, 166);
+    opacity: 1;
+  }
+  
+  input[type=checkbox]:before {
+    content: '';
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    width: 4px;
+    height: 10px;
+    border: solid #FFF;
+    border-width: 0 2px 2px 0;
+    margin: -1px -1px 0 -1px;
+    transform: rotate(45deg) translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  /*-----
+  Essay Writer
+  -----*/
+
+
+  .paddingContainer {
+    padding: 20px 0px;
+  }
+
+  select {
+    font-family: 'satoshi', sans-serif;
+    background-color: #151515;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    outline: none;
+  }
+
+  .generateButton {
+    background-color: rgba(146, 65, 179, 0.7);
+    color: white;
+    outline: none;
+    border-radius: 10px;
+    border-style: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .generateButton:hover {
+    background-color: rgba(95, 42, 116, 0.7);
+    color: grey;
+    transition: 0.3s;
+  }
+
+  #evidenceSrcContainer {
+    display: none;
+  }
+
+  /*Toggle Button*/
+
+  .inactiveMixin {
+    content: "";
+    position: absolute;
+    display: block;
+ }
+  .beforeAnimation {
+    transition: .2s cubic-bezier(.24,0,.5,1);
+ }
+  .afterAnimation {
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 4px 0px 0 rgba(0,0,0,0.04), 0 4px 9px rgba(0,0,0,0.13), 0 3px 3px rgba(0,0,0,0.05);
+    transition: .35s cubic-bezier(.54,1.60,.5,1);
+ }
+  .toggleWrapper {
+    margin: 0;
+    width: fit-content;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+ }
+
+ .toggleWrapper span {
+  height: 100%;
+ }
+
+ .proFeature {
+  font-size: 15px;
+  padding: 2px 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background: linear-gradient(to right, rgb(162, 54, 219), rgb(58, 109, 239));
+ }
+  .toggleWrapper input.mobileToggle {
+    opacity: 0;
+    position: absolute;
+ }
+  .toggleWrapper input.mobileToggle + label {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+    transition: .4s ease;
+    height: 30px;
+    width: 50px;
+    background-color: #474747;
+    border-radius: 60px;
+    cursor: pointer;
+ }
+  .toggleWrapper input.mobileToggle + label:before {
+    content: "";
+    position: absolute;
+    display: block;
+    transition: .2s cubic-bezier(.24,0,.5,1);
+    height: 30px;
+    width: 51px;
+    top: 0;
+    left: 0;
+    border-radius: 30px;
+ }
+  .toggleWrapper input.mobileToggle + label:after {
+    content: "";
+    position: absolute;
+    display: block;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 4px 0px 0 rgba(0,0,0,0.04), 0 4px 9px rgba(0,0,0,0.13), 0 3px 3px rgba(0,0,0,0.05);
+    transition: .35s cubic-bezier(.54,1.60,.5,1);
+    background: whitesmoke;
+    height: 28px;
+    width: 28px;
+    top: 1px;
+    left: 0px;
+    border-radius: 60px;
+ }
+  .toggleWrapper input.mobileToggle:checked + label:before {
+    background: #56418a;
+    transition: width .2s cubic-bezier(0,0,0,.1);
+ }
+  .toggleWrapper input.mobileToggle:checked + label:after {
+    left: 24px;
+ }
+  
+
+  
+  /*Range Input*/
+  /***** Chrome, Safari, Opera, and Edge Chromium *****
+  input[type="range"]::-webkit-slider-runnable-track {
+    background: #43055f;
+    border-radius: 20px;
+  }
+
+  /******** Firefox ********
+  input[type="range"]::-moz-range-track {
+    background: #43055f;
+    border-radius: 20px;
+  }/
+
+  /*Select Styling*/
+
+
+/* <select> styles */
+:root {
+  --background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f);
+  --gray: #623d92;
+  --darkgray: #2e0a57;
+}
+
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: #480088;
+  transition: .25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+
+
+/*-----
+Loader
+-----*/
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid rgb(0, 0, 0);
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  margin: 20px;
+  
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-bottom: 4px solid #44006c;
+  border-left: 4px solid transparent;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+
+.loadingAnim {
+  margin: auto;
+  width: 90%;
+  font-family: 'satoshi', sans-serif;
+  color: black;
+  font-weight: 500;
+}
+
+
+.loadingText {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  color: #000000;
+}
+
+
+.loadingText::before {
+    content: attr(data-text);
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    color: #c164ff;
+    animation: fill-1 3s infinite;
+  }
+
+@keyframes fill-1 {
+  50%   { width: 100%; }
+  100%  { width: 0%;   }
+}
+
+/*-----
+Progress bar
+-----*/
+
+/*-----
+Progress bar
+-----*/
+
+@import "compass/css3";
+
+.progress {
+  width: 100%;
+  height: 15px;
+}
+
+.progress-wrap {
+  background: purple;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+}
+.progress-wrap .progress-bar {
+  background: #ddd;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+
+/*-----
+Results Container
+-----*/
+.resultsShower {
+  display: none;
+}
+
+.resultsContainer{
+  padding: 20px 0px;
+  padding-bottom: 50px;
+  width: 60%;
+  margin: auto;
+}
+
+.generatedText {
+  background: white;
+  font-family: 'satoshi', sans-serif;
+  margin: auto;
+  padding: 25px;
+  margin: 20px;
+  width: 100%;
+  border-radius: 20px;
+  -webkit-box-shadow: 10px 10px 46px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 46px -1px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 46px -1px rgba(0,0,0,0.75);
+}
+
+.generatedEssay {
+  padding: 10px 0px;
+}
+
+.functionButtons {
+  color: white;
+  font-family: 'satoshi', sans-serif;
+  width: 200px;
+  height: 60px;
+  border-radius: 20px;
+  display: flex;
+  vertical-align: middle;
+  align-items: left;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 15px 0px;
+}
+
+.functionButtons:hover {
+  filter: brightness(50%);
+  transition: 0.3s;
+}
+
+.functionButtons img {
+  margin: auto;
+  height: 40px;
+  width: 40px;
+  flex: left;
+}
+
+.functionButtons p {
+  margin: auto;
+  height: 100%;
+  width: 120px;
+  vertical-align: middle;
+  align-items: center;
+  display: flex;
+}
+
+.blueBackground {
+  background: rgb(72, 72, 255);
+}
+
+.darkblueBackground {
+  background: rgb(34, 34, 126);
+}
+
+.orangeBackground {
+  background: rgb(255, 124, 72);
+}
+
+/*Table*/
+table {
+  font-family: 'satoshi', sans-serif;
+  max-width: 50%;
+  margin: 50px auto;
+  border-collapse: collapse;
+}
+
+th {
+  background: rgb(42, 42, 42);
+}
+
+th, td {
+  border: 1px solid rgb(63, 63, 63);
+  padding: 8px;
+}
+
+tr {
+  transition: 0.3s;
+}
+
+
+
+tr:hover {
+  background: rgb(60, 60, 60);
+  transition: 0.3s;
+}
+
+@media only screen and (max-width: 950px) {
+
+  .essayWriter {
+    width: 90%;
+    padding: 5%;
+  }
+
+  input[type="text"] {
+    width: 80%;
+  }
+
+
+  .resultsContainer {
+    display: block;
+    width: 100%;
+  }
+
+  .generatedText {
+    width: 80%;
+    margin: 5%;
+    padding: 5%;
+  }
+
+  .functionsContainer {
+    width: 100%;
+    margin-top: 40px;
+  }
+  .functionButtons {
+    margin: 20px auto;
+  }
+
+
+} 
+

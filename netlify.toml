@@ -1,0 +1,7 @@
+[build]
+  functions = "netlify/functions"
+  command = "# no build command"
+  publish = "dist"
+  
+[functions]
+  node_bundler = "esbuild" 
