@@ -42,10 +42,10 @@ async function sendPrompt() {
         //URL: ${JSON.stringify(rawWebResults.searchResults[i].links)}
       }
       console.log(webResultsPrompt);
-      var fullPrompt = `${webResultsPrompt}.\n\nInstructions: Using the provided web search results, write a short but precise essay outline for "${essayTitle}" , including exactly ${mainPointsCount} main point(s), point, evidence, and explanation. Format it as a array with ${mainPointsCount} JSON object(s) without naming, where each object represents one point. In each JSON object, it should include a point, labelled point in double quotes, an evidence supporting the point, labelled evidence in double quotes, with a short explanation, labelled explanation in double quotes.`;
+      var fullPrompt = `${webResultsPrompt}.\n\nInstructions: Using the provided web search results, write a short but precise essay outline for "${essayTitle}" , including exactly and only ${mainPointsCount}, each with a point, evidence, and explanation. Format it as a array with ${mainPointsCount} JSON object(s) without naming, where each object represents one point. In each JSON object, it should include a point, labelled "point" in quotes, an evidence supporting the point, labelled "evidence" in quotes, with a short explanation, labelled "explanation" in quotes.`;
     
     } else {
-      var fullPrompt = `Write a short but precise essay outline for "${essayTitle}" , including exactly ${mainPointsCount} main point(s), point, evidence, and explanation. Format it as a array with ${mainPointsCount} JSON object(s) without naming, where each object represents one point. In each JSON object, it should include a point, labelled point in double quotes, an evidence supporting the point, labelled evidence in double quotes, with a short explanation, labelled explanation in double quotes.`;
+      var fullPrompt = `Write a short but precise essay outline for "${essayTitle}" , including exactly and only ${mainPointsCount}, each with a point, evidence, and explanation. Format it as a array with ${mainPointsCount} JSON object(s) without naming, where each object represents one point. In each JSON object, it should include a point, labelled "point" in quotes, an evidence supporting the point, labelled "evidence" in quotes, with a short explanation, labelled "explanation" in quotes.`;
     }
     console.log(fullPrompt);
 

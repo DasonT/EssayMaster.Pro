@@ -71,20 +71,6 @@ input[type="text"] {
     transition: 0.3s;    
 }
 
-input:-internal-autofill-selected {
-  background-color: #151515;
-    width: 600px;
-    height: 30px;
-    padding: 0px 10px;
-    font-size: 16px;
-    border-radius: 12.5px;
-    border-style: solid;
-    border-color: rgb(62, 62, 62);
-    color: white;
-    border-width: 1px;
-    outline: none;
-    transition: 0.3s;  
-}
 
 input[type="text"]:focus {
   border-color: rgb(119, 119, 119);
@@ -389,11 +375,6 @@ Loader
   50%   { width: 100%; }
   100%  { width: 0%;   }
 }
-
-/*-----
-Progress bar
------*/
-
 /*-----
 Progress bar
 -----*/
@@ -406,17 +387,19 @@ Progress bar
 }
 
 .progress-wrap {
-  background: purple;
+  background: rgb(141, 62, 184);
+  border-radius: 15px;
   margin: 20px 0;
   overflow: hidden;
   position: relative;
 }
 .progress-wrap .progress-bar {
-  background: #ddd;
+  background: rgb(62, 62, 62);
   left: 0;
   position: absolute;
   top: 0;
 }
+
 
 
 /*-----

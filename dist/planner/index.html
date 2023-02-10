@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free AI Essay Outliner - EssayMasterPro</title>
+    <title>Free AI Essay planner - EssayMasterPro</title>
     <link rel="shortcut icon" href="../Assets/EssayMasterLogo.png">
 
     <!--CSS-->
     <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="essayoutliner.css">
+    <link rel="stylesheet" href="./essayplanner.css">
 
     <!--Scripts-->
     <script src="https://kit.fontawesome.com/67eece109a.js" crossorigin="anonymous"></script>
@@ -28,9 +27,9 @@
         </div>
 
         <ul class="navigation">
-            <a href="/writer" class="navigationUnderline" target="_blank"><li>Write me an Esasy</li></a>
+            <a href="/writer" class="navigationUnderline" target="_blank"><li>Write me an Essay</li></a>
             <!--<a href="/enhancer" class="navigationUnderline" target="_blank"><li>Enhance my Essay</li></a>-->
-            <a href="/outliner" class="navigationUnderline" target="_blank"><li>Outline my Essay</li></a>
+            <a href="/planner" class="navigationUnderline" target="_blank"><li>Plan my Essay</li></a>
             <!--<a href="/scout" target="_blank"><li><p class="signUpButton">Evidence Scout</p></li></a>
             <a href="#" class="navigationUnderline"><li>Log In</li></a>
             <a href="#"><li><p class="signUpButton">Sign Up</p></li></a>-->
@@ -49,16 +48,17 @@
         </div>
     </div>
 
-    <ul class="mobilenav" id="mobilenav">
-        <a href="/writer"><li>Write me an Esasy</li></a>
-        <hr>
-        <a href="/outliner"><li>Outline my Essay</li></a>
-    </ul>
+</div>
+
+<ul class="mobilenav" id="mobilenav">
+    <a href="/writer"><li>Write me an Essay</li></a>
+    <a href="/planner"><li>Plan my Essay</li></a>
+</ul>
 
     <br>
 
         <div class="titleContainer">
-            <h1 class="titleText">Outline Essays 100x Faster.</h1>
+            <h1 class="titleText">Plan Essays 100x Faster.</h1>
         </div>
     
 
@@ -104,11 +104,11 @@
 -->
             <div class="essayTypeContainer paddingContainer">
                 <select name="mainPointCountSelection" id="mainPointCountSelection">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3" selected>3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                    <option value="1 main point">1</option>
+                    <option value="2 main points">2</option>
+                    <option value="3 main points" selected>3</option>
+                    <!--<option value="4">4</option>
+                    <option value="5">5</option>-->
                 </select>
                 <span>&ensp;main point(s)</span>
             </div>
@@ -151,6 +151,7 @@
             </div>
 
         </div>
+
 
         <div class="resultsShower" id="resultsShower">
             <table class="my_table" id="resultsTable">
@@ -204,11 +205,14 @@
 
             </div>-->
         </div>
-    </div>
+
+    <footer>
+        Copyright &copy; 2023 Essay Master Pro
+      </footer>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="../scripts/progressbar.js"></script>
-        <script src="essayoutliner.js"></script>
+        <script src="essayplanner.js"></script>
         <script src="../scripts/hamburger.js"></script>
 
 </body>

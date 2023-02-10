@@ -78,7 +78,7 @@ Header
     vertical-align: middle;
     height: 100px;
     color: rgb(255, 255, 255);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'satoshi', sans-serif;
     font-weight: 900px;
     font-size: 15px;
  }
@@ -126,6 +126,7 @@ Header
 
   #mobilenav {
     display: none;
+    opacity: 0;
   }
 
   .burgermenuContainer {
@@ -141,9 +142,10 @@ Header
     #mobilenav {
       display: none;
       width: 100%;
-      background-color: rgb(123, 80, 148);
-      font-family: 'Roboto', sans-serif;
+      background-color: rgb(30, 0, 48);
+      font-family: 'satoshi', sans-serif;
       text-align: center;
+      opacity: 1;
     }
 
     .mobilenav a {
@@ -153,9 +155,9 @@ Header
     }
 
     .mobilenav hr {
-      color: white;
-      background-color: white;
-      height: 1px;
+      color: rgb(4, 0, 8);
+      background-color: rgb(4, 0, 8);
+      height: 0.2px;
     }
 
     .mobilenav a li {
@@ -198,7 +200,7 @@ Header
     position: absolute;
     height: 4px;
     width: 100%;
-    background: #000;
+    background: #ffffff;
     transition: 0.5s;
  }
  /* steps of 12 are optional, could also be 10, 13 etc */

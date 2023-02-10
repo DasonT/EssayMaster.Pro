@@ -26,30 +26,37 @@ async function sendPrompt() {
     
   var essayTitle = document.getElementById("essayTitleInput").value;
   var essayType = document.getElementById("essayTypeSelection").value;
-  var wordCountValue = document.getElementById("wordCountValue").innerText;
-  var tokenlimit = (parseInt(wordCountValue)*1.5)+200;
+  //var wordCountValue = document.getElementById("wordCountValue").innerText;
+  var mainPointsCount = document.getElementById("mainPointCountSelection").value;
+  //var tokenlimit = (parseInt(wordCountValue)*1.5)+200;
+  var toggle = document.getElementById("toggle1");
 
-  console.log(tokenlimit);
-
-  const webResults = await fetch("/.netlify/functions/search-on-web", {
-    method: "POST",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      query: essayTitle
-    })}
+  if (toggle.checked) {
+        
+    const webResults = await fetch("/.netlify/functions/search-on-web", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        query: essayTitle
+      })}
     ).then(response => response.json());  
 
     var rawWebResults = await webResults;
-
-    var webResultsPrompt = "Web search results:   ";
-
+    var webResultsPrompt = "Web Search Results: ";
     for (let i = 0; i < rawWebResults.searchResults.length ; i++) {
-      webResultsPrompt = `${webResultsPrompt} [${i+1}] ${JSON.stringify(rawWebResults.searchResults[i].snippet)}, URL: ${JSON.stringify(rawWebResults.searchResults[i].links)}`;
+      webResultsPrompt = `${webResultsPrompt} [${i+1}]  ${JSON.stringify(rawWebResults.searchResults[i].title.replace(/["']/g, "").replace("...",""))}: ${JSON.stringify(rawWebResults.searchResults[i].snippet.replace(/["']/g, "").replace("...",""))}.`;
+      //URL: ${JSON.stringify(rawWebResults.searchResults[i].links)}
     }
-
     console.log(webResultsPrompt);
+    var fullPrompt = `${webResultsPrompt}.\n\nInstructions: Using the provided web search results, write a standard form ${essayType} essay on ${essayTitle} with ${mainPointsCount+2} paragraphs, including an introduction, ${mainPointsCount} main point(s), and a conclusion, utilising evidence from above.`;
+  
+  } else {
+    var fullPrompt = `Write a standard form ${essayType} essay on ${essayTitle} with ${mainPointsCount+2} paragraphs, including an introduction, ${mainPointsCount} main point(s), and a conclusion, including real evidence.`;
+  }
+  console.log(fullPrompt);
+
   
   const response = await fetch("/.netlify/functions/send-prompt", {
     method: "POST",
@@ -57,8 +64,8 @@ async function sendPrompt() {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      prompt: `Write a minimum ${wordCountValue}-word ${essayType} essay on ${essayTitle}, including evidence.`,
-      tokenlimit: tokenlimit
+      prompt: fullPrompt,
+      tokenlimit: 700
     })}
     ).then(response => response.json());  
 
@@ -118,6 +125,6 @@ function wordCountValue() {
   var wordCountValue = document.getElementById("wordCountValue");
   var wordCountRange = document.getElementById("wordCountRange").value;
 
-  wordCountValue.innerText = wordCountRange*8;
+  wordCountValue.innerText = wordCountRange*4+100;
 }
 
